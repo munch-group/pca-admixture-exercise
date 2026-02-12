@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: _build
+    
+comments:
+  hypothesis: true
+
+execute:
+  freeze: auto
+  echo: true
+
+lightbox: true
+
+format:
+  html:
+    linkcolor: "#0D7D92"
+    grid:
+      sidebar-width: 330px
+      body-width: 900px
+      margin-width: 270px
+      gutter-width: 1.5rem
+    theme: [cosmo, .custom.scss] 
+    highlight-style: .numpy.theme
+    notebook-links: true
+    callout-icon: false
+    code-overflow: scroll
+    # code-tools:
+    #   source: repo
+    fig-align: center    
+    html-math-method: katex
+    toc: true
+    mermaid:
+      theme: neutral     
+
+

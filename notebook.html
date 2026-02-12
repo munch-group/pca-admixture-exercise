@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Population Structure</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d612865ca381b6ed05c8d74a15b7f611.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-db454fb512035fdc4306c37430c21095.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-data-set" id="toc-the-data-set" class="nav-link active" data-scroll-target="#the-data-set">The data set</a></li>
+  <li><a href="#principal-component-analysis-pca" id="toc-principal-component-analysis-pca" class="nav-link" data-scroll-target="#principal-component-analysis-pca">Principal Component Analysis (PCA)</a></li>
+  <li><a href="#ld-pruning" id="toc-ld-pruning" class="nav-link" data-scroll-target="#ld-pruning">LD Pruning</a></li>
+  <li><a href="#admixture" id="toc-admixture" class="nav-link" data-scroll-target="#admixture">Admixture</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Population Structure</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-data-set" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-set">The data set</h2>
+<p>The data for this exercise comes from the Simons Genome Diversity Project (SGDP), a large-scale whole-genome sequencing effort that provides high-coverage genomes from diverse human populations around the world. The SGDP was designed to capture a broad sweep of human genetic diversity, sampling individuals from populations that span the major continental groups and represent a wide range of demographic histories and geographic locations.</p>
+<p>We will work with a subset of the SGDP consisting of individuals from 22 populations: Ju/’hoan North (Namibia), Esan (Nigeria), Luhya (Kenya), Mandenka (West Africa), Yoruba (Nigeria), and Luo (Kenya) representing sub-Saharan Africa; Miao, Naxi, and Han (China), Japanese, Atayal and Ami (Taiwan), Cambodian, Korean, and Kinh (Vietnam) representing East and Southeast Asia; and Bulgarian, Druze, English, Georgian, Hungarian, Icelandic, and Iranian representing West Eurasia. This selection gives us representatives of three major continental groups — Africa, East Asia, and West Eurasia — with enough populations in each group to observe both between-group and within-group genetic structure.</p>
+<p>Rather than analyzing the entire genome, we focus on a 10 Mb region of chromosome 2 (positions 135–145 Mb). Working with a smaller genomic region keeps computation manageable for the exercise while still providing enough variant sites to resolve population structure at the continental level. The data is provided in VCF format.</p>
+<p>The VCF file (<code>chr2_135_145_flt.vcf.gz</code>) is already in your folder along with a CSV file with information about the samples (<code>sample_infos_accessionnb.csv</code>).</p>
+<p>Import the libraries needed for this exercise:</p>
+<div id="imports" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, shutil, re                       <span class="co"># built-in libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy, pandas, sklearn.decomposition <span class="co"># general data science</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sgkit, bio2zarr.vcf                  <span class="co"># pop gen analysis</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cartopy.crs, cartopy.feature         <span class="co"># map plotting</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn, matplotlib.pyplot <span class="im">as</span> plt    <span class="co"># plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And a bit to make the plots look nicer in vscode:</p>
+<div id="bfc0559f" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'svg'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vscodenb <span class="im">import</span> set_vscode_theme, vscode_theme</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>set_vscode_theme()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>seaborn.set_palette(<span class="st">'tab10'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now read the metadata information into a data frame:</p>
+<div id="81a2df36" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>info <span class="op">=</span> pandas.read_csv(<span class="st">"sample_infos_accessionnb.csv"</span>, sep<span class="op">=</span><span class="st">";"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>info.set_index(<span class="st">'ENA-RUN'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>info.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Lets draw a map showing the location of each sampled population:</p>
+<div id="f30d0f1f" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">7</span>), subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: cartopy.crs.PlateCarree()})</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ax.add_feature(cartopy.feature.LAND, facecolor<span class="op">=</span><span class="st">"#333333"</span>, edgecolor<span class="op">=</span><span class="st">"gray"</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ax.add_feature(cartopy.feature.BORDERS, linewidth<span class="op">=</span><span class="fl">0.3</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, edgecolor<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>seaborn.scatterplot(x<span class="op">=</span><span class="st">'longitude'</span>, y<span class="op">=</span><span class="st">'latitude'</span>, hue<span class="op">=</span><span class="st">'region'</span>, data<span class="op">=</span>info, ax<span class="op">=</span>ax, s<span class="op">=</span><span class="dv">50</span>, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                edgecolor<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>, palette<span class="op">=</span><span class="st">'tab10'</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pop, lat, lon <span class="kw">in</span> info[[<span class="st">'population'</span>, <span class="st">'latitude'</span>, <span class="st">'longitude'</span>]].itertuples(index<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    ax.text(lon <span class="op">+</span> <span class="dv">2</span>, lat <span class="op">+</span> <span class="fl">1.5</span>, pop.replace(<span class="st">"_"</span>, <span class="st">" "</span>), fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'white'</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                 transform<span class="op">=</span>cartopy.crs.PlateCarree(), ha<span class="op">=</span><span class="st">"left"</span>, va<span class="op">=</span><span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We will use the <a href="https://sgkit-dev.github.io/sgkit/latest/">sgkit</a> library for this exercise. sgkit needs data to be in the <a href="https://zarr.readthedocs.io/en/stable/">zarr format</a>, so the first thing we need to do is convert our VCF file to Zarr format using the <a href="https://sgkit-dev.github.io/bio2zarr/intro.html">bio2zarr</a> library:</p>
+<div id="read-vcf" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vcf_path, zarr_path <span class="op">=</span> <span class="st">"chr2_135_145_flt.vcf.gz"</span>, <span class="st">"zarr_data"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os.path.exists(zarr_path): shutil.rmtree(zarr_path)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>bio2zarr.vcf.convert([vcf_path], zarr_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now you have a data folder called <code>zarr_data</code> in your folder that you can load using <code>sgkit</code>:</p>
+<div id="336cde8f" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> sgkit.load_dataset(zarr_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="have-a-look-at-the-dataset-you-can-unfold-the-data-variables.-how-is-it-structured-and-what-it-contain-what-are-the-advantages-of-the-zarr-format" class="level4">
+<h4 class="anchored" data-anchor-id="have-a-look-at-the-dataset-you-can-unfold-the-data-variables.-how-is-it-structured-and-what-it-contain-what-are-the-advantages-of-the-zarr-format">Have a look at the dataset (you can unfold the “Data variables”). How is it structured and what it contain? What are the advantages of the Zarr format?</h4>
+<div id="304e3dcc" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>sizes</code> attribute is a dictionary with the sizes/counts of elements in the dataset.</p>
+<div id="b031cfd9" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ds.sizes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Extract the number of variants and samples:</p>
+<div id="0d45c57c" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n_variants <span class="op">=</span> ds.sizes[<span class="st">"variants"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n_samples <span class="op">=</span> ds.sizes[<span class="st">"samples"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can access the each dataset variable as with a dictionary:</p>
+<div id="5dbd7e6b" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ds[<span class="st">"call_genotype"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Use the <code>values</code> attribute to get the actual values as a numpy array:</p>
+<div id="2b6929bf" class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ds[<span class="st">"call_genotype"</span>].values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="17b227de" class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> ds[<span class="st">"sample_id"</span>].values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Extract genotype matrix and identify variants with no missing data in any sample:</p>
+<div id="383694b7" class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>gt <span class="op">=</span> ds[<span class="st">"call_genotype"</span>].values</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>is_called <span class="op">=</span> numpy.<span class="bu">all</span>(gt <span class="op">&gt;=</span> <span class="dv">0</span>, axis<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compute alternative allele count per individual (dosage: 0, 1, or 2) for the sites with no missing data:</p>
+<div id="7613897c" class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>gn_filt <span class="op">=</span> gt[is_called].<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">2</span>)  <span class="co"># sum over ploidy dimension</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="principal-component-analysis-pca" class="level2">
+<h2 class="anchored" data-anchor-id="principal-component-analysis-pca">Principal Component Analysis (PCA)</h2>
+<p>Principal component analysis (PCA) is one of the most widely used methods for exploring population structure in genomic data. The basic idea is dimensionality reduction: a genotype matrix with thousands of variant sites and dozens (or hundreds) of individuals lives in a very high-dimensional space, but the major axes of variation in that space often correspond to meaningful biological signals — most prominently, geographic and demographic history. In practice, we arrange the data as a matrix where each row is an individual and each column is a SNP, with entries coded as 0, 1, or 2 copies of the alternative allele. PCA finds the linear combinations of SNPs (the principal components) that capture the most variance across individuals. The first principal component (PC1) captures the single direction of greatest variation, PC2 the next-greatest orthogonal direction, and so on. For human genomic data, the top principal components typically reflect continental-level ancestry differences. In a data set like ours, with African, East Asian, and West Eurasian populations, we can expect PC1 and PC2 to separate the three continental groups, while lower-ranked components may reveal finer-scale structure within continents. This pattern arises because genetic differentiation between continental groups — shaped by the out-of-Africa dispersal and subsequent drift — accounts for a large fraction of the total variance in allele frequencies.</p>
+<p>We will use <code>sgkit</code> for reading VCF files and LD pruning and <code>scikit-learn</code> for PCA.</p>
+<div id="run-pca" class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The total number of PCs is min(n_samples - 1, n_snps)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>n_pcs <span class="op">=</span> <span class="bu">min</span>(gn_filt.shape[<span class="dv">1</span>] <span class="op">-</span> <span class="dv">1</span>, gn_filt.shape[<span class="dv">0</span>])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of PCs to compute: </span><span class="sc">{</span>n_pcs<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Run PCA using scikit-learn</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Transpose: PCA expects samples as rows, features (SNPs) as columns</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> sklearn.decomposition.PCA(n_components<span class="op">=</span>n_pcs)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>eigenvectors <span class="op">=</span> pca.fit_transform(gn_filt.T)  <span class="co"># shape: (n_samples, n_pcs)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="pca-summary" class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"PCA summary:"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Number of samples: </span><span class="sc">{</span>eigenvectors<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Number of PCs: </span><span class="sc">{</span>eigenvectors<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Eigenvalues (first 5): </span><span class="sc">{</span>pca<span class="sc">.</span>explained_variance_[:<span class="dv">5</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Variance explained % (first 5): </span><span class="sc">{</span>pca<span class="sc">.</span>explained_variance_ratio_[:<span class="dv">5</span>] <span class="op">*</span> <span class="dv">100</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="how-many-individuals-and-snps-does-this-dataset-have-what-is-an-eigenvector-and-an-eigenvalue" class="level4">
+<h4 class="anchored" data-anchor-id="how-many-individuals-and-snps-does-this-dataset-have-what-is-an-eigenvector-and-an-eigenvalue">How many individuals and SNPs does this dataset have? What is an eigenvector and an eigenvalue?</h4>
+<div id="build-df" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build a DataFrame of eigenvectors with metadata</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pc_cols <span class="op">=</span> [<span class="ss">f"PC</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_pcs)]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>df_pca <span class="op">=</span> pandas.DataFrame(eigenvectors, columns<span class="op">=</span>pc_cols)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>df_pca.set_index(samples, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>df_pca.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Merge with metadata:</p>
+<div id="621ce8fc" class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df_pca <span class="op">=</span> df_pca.merge(info, left_index<span class="op">=</span><span class="va">True</span>, right_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df_pca.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s first look at how much of the variance of the data is explained by each eigenvector:</p>
+<div id="scree-plot" class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variance proportion (scree plot)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pca_percent <span class="op">=</span> pca.explained_variance_ratio_ <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#fig, ax = plt.subplots(figsize=(8, 5))</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(pca_percent) <span class="op">+</span> <span class="dv">1</span>), pca_percent, <span class="st">"o-"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"PC's"</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Variance explained (%)"</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="how-many-pcs-do-we-need-in-order-to-explain-50-of-the-variance-of-the-data-can-you-make-a-cumulative-plot-of-the-variance-explained-per-pc" class="level4">
+<h4 class="anchored" data-anchor-id="how-many-pcs-do-we-need-in-order-to-explain-50-of-the-variance-of-the-data-can-you-make-a-cumulative-plot-of-the-variance-explained-per-pc">How many PCs do we need in order to explain 50% of the variance of the data? Can you make a cumulative plot of the variance explained per PC?</h4>
+<div id="cumulative-plot" class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hint for Q.2: cumulative variance plot</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>cumulative <span class="op">=</span> numpy.cumsum(pca_percent)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>n_for_50 <span class="op">=</span> numpy.argmax(cumulative <span class="op">&gt;=</span> <span class="dv">50</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(cumulative) <span class="op">+</span> <span class="dv">1</span>), cumulative, <span class="st">"o-"</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">50</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>n_for_50<span class="sc">}</span><span class="ss"> PCs needed to explain 50%"</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"PC's"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Cumulative variance explained (%)"</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, let’s plot the two first PCs and color the datapoints by the origin of each individual sample.</p>
+<div id="61d53853" class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> seaborn.scatterplot(data<span class="op">=</span>df_pca, x<span class="op">=</span><span class="st">"PC2"</span>, y<span class="op">=</span><span class="st">"PC3"</span>, hue<span class="op">=</span><span class="st">"region"</span>, palette<span class="op">=</span><span class="st">"tab10"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>seaborn.move_legend(ax, <span class="st">"upper left"</span>, bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), frameon<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="try-to-plot-pc2-and-pc3.-do-you-see-the-same-patterns-what-is-the-correlation-between-pc2-and-pc3" class="level4">
+<h4 class="anchored" data-anchor-id="try-to-plot-pc2-and-pc3.-do-you-see-the-same-patterns-what-is-the-correlation-between-pc2-and-pc3">Try to plot PC2 and PC3. Do you see the same patterns? What is the correlation between PC2 and PC3?</h4>
+<div id="4c9f8dad" class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> seaborn.scatterplot(data<span class="op">=</span>df_pca, x<span class="op">=</span><span class="st">"PC1"</span>, y<span class="op">=</span><span class="st">"PC2"</span>, hue<span class="op">=</span><span class="st">"region"</span>, palette<span class="op">=</span><span class="st">"tab10"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>seaborn.move_legend(ax, <span class="st">"upper left"</span>, bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), frameon<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="pc2-pc3" class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> seaborn.scatterplot(data<span class="op">=</span>df_pca, x<span class="op">=</span><span class="st">"PC2"</span>, y<span class="op">=</span><span class="st">"PC3"</span>, hue<span class="op">=</span><span class="st">"region"</span>, palette<span class="op">=</span><span class="st">"tab10"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>seaborn.move_legend(ax, <span class="st">"upper left"</span>, bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), frameon<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="try-also-to-color-the-graph-based-on-population.-what-do-you-observe" class="level4">
+<h4 class="anchored" data-anchor-id="try-also-to-color-the-graph-based-on-population.-what-do-you-observe">Try also to color the graph based on population. What do you observe?</h4>
+<div id="adef91e8" class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> vscode_theme(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">5</span>)):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> seaborn.scatterplot(data<span class="op">=</span>df_pca, x<span class="op">=</span><span class="st">"PC1"</span>, y<span class="op">=</span><span class="st">"PC2"</span>, hue<span class="op">=</span><span class="st">"population"</span>, style<span class="op">=</span><span class="st">'region'</span>, s<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    seaborn.move_legend(ax, <span class="st">"upper left"</span>, bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), frameon<span class="op">=</span><span class="va">False</span>, ncol<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="ld-pruning" class="level2">
+<h2 class="anchored" data-anchor-id="ld-pruning">LD Pruning</h2>
+<p>Now we will implement LD pruning using sgkit’s built-in functions. sgkit computes pairwise LD (<span class="math inline">r^2</span>) within sliding windows and removes one SNP from each highly-correlated pair.</p>
+<div id="ld-pruning" class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>numpy.random.seed(<span class="dv">1000</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset to only fully-called variants</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>called_idx <span class="op">=</span> numpy.where(is_called)[<span class="dv">0</span>]</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>ds_filt <span class="op">=</span> ds.isel(variants<span class="op">=</span>called_idx)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"SNPs before: </span><span class="sc">{</span>ds<span class="sc">.</span>variants<span class="sc">.</span>size<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"SNPs after: </span><span class="sc">{</span>ds_filt<span class="sc">.</span>variants<span class="sc">.</span>size<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="84be4067" class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ds_filt[<span class="st">"call_dosage"</span>] <span class="op">=</span> ds_filt[<span class="st">"call_genotype"</span>].<span class="bu">sum</span>(dim<span class="op">=</span><span class="st">"ploidy"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Window by variant for LD computation</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>ds_windowed <span class="op">=</span> sgkit.window_by_variant(ds_filt, size<span class="op">=</span><span class="dv">500</span>, step<span class="op">=</span><span class="dv">250</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># # Compute LD matrix (Rogers-Huff r) within windows</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>ds_ld <span class="op">=</span> sgkit.ld_matrix(ds_windowed)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.matshow(ds_ld.values)</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># LD prune with threshold 0.3: returns a boolean DataArray (True = keep)</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>ld_threshold <span class="op">=</span> <span class="fl">0.3</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>ds_pruned <span class="op">=</span> sgkit.ld_prune(ds_windowed, threshold<span class="op">=</span>ld_threshold)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"SNPs before LD pruning: </span><span class="sc">{</span>ds_filt<span class="sc">.</span>variants<span class="sc">.</span>size<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"SNPs after LD pruning (threshold=</span><span class="sc">{</span>ld_threshold<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>ds_pruned<span class="sc">.</span>variants<span class="sc">.</span>size<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="implement-different-ld-thresholds-0.1-0.2-0.3-0.4-0.5.-how-many-snps-are-left-after-each-filtering-threshold-are-these-snps-linked" class="level4">
+<h4 class="anchored" data-anchor-id="implement-different-ld-thresholds-0.1-0.2-0.3-0.4-0.5.-how-many-snps-are-left-after-each-filtering-threshold-are-these-snps-linked">Implement different LD thresholds (0.1, 0.2, 0.3, 0.4, 0.5). How many SNPs are left after each filtering threshold? Are these SNPs linked?</h4>
+<div id="ld-thresholds" class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hint for Q.5: try different LD thresholds</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The LD matrix is already computed; only the pruning threshold changes</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> threshold <span class="kw">in</span> [<span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.5</span>]:</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    keep <span class="op">=</span> sg.ld_prune(ds_windowed, threshold<span class="op">=</span>threshold)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"LD threshold </span><span class="sc">{</span>threshold<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>keep<span class="sc">.</span>variants<span class="sc">.</span>size<span class="sc">}</span><span class="ss"> SNPs remaining out of </span><span class="sc">{</span>ds_filt<span class="sc">.</span>variants<span class="sc">.</span>size<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="redo-the-pca-analysis-on-the-ld-pruned-data-set.-does-it-make-a-difference" class="level4">
+<h4 class="anchored" data-anchor-id="redo-the-pca-analysis-on-the-ld-pruned-data-set.-does-it-make-a-difference">Redo the PCA analysis on the LD-pruned data set. Does it make a difference?</h4>
+</section>
+</section>
+<section id="admixture" class="level2">
+<h2 class="anchored" data-anchor-id="admixture">Admixture</h2>
+<p>While PCA gives us a visual summary of population structure, it does not directly tell us what proportion of each individual’s genome derives from different ancestral sources. For that, we turn to model-based ancestry estimation using ADMIXTURE.</p>
+<p>ADMIXTURE belongs to a family of model-based clustering methods for population genetics, following in the tradition of STRUCTURE (Pritchard et al.&nbsp;2000). The shared idea is to posit that the observed genotypes in our sample were generated by mixing together <em>K</em> unobserved ancestral populations, each characterized by its own allele frequencies. The goal is to simultaneously infer those ancestral allele frequencies and the proportion of each individual’s genome that derives from each ancestral source.</p>
+<!-- ADMIXTURE is a maximum-likelihood method that models each individual's genotype as arising from a mixture of *K* ancestral populations, each with its own set of allele frequencies. Given a value of *K*, the algorithm estimates two things simultaneously: the allele frequencies in each of the *K* ancestral populations (the *P* matrix), and the proportion of each individual's ancestry that derives from each ancestral population (the *Q* matrix). The model assumes that, conditional on these ancestry proportions and allele frequencies, genotypes at different SNPs are independent — which is why, as with PCA, it is good practice to prune for LD before running the analysis. -->
+<p>The ADMIXTURE model assumes that each individual <em>i</em> in our sample derives some fraction of their ancestry from each of <em>K</em> ancestral populations, and that genotypes at each SNP are drawn independently given these ancestry proportions and the allele frequencies of the ancestral populations.</p>
+<p>More precisely, consider individual <em>i</em> at biallelic SNP <em>j</em>. The individual carries a diploid genotype, which we code as <span class="math inline">g_{ij} \in \{0, 1, 2\}</span> — the count of the alternative allele. The model has two sets of parameters:</p>
+<ul>
+<li><p><span class="math inline">Q</span> (the ancestry proportion matrix): <span class="math inline">q_{ik}</span> is the fraction of individual <em>i</em>’s genome derived from ancestral population <em>k</em>. For each individual, these sum to one: <span class="math inline">\sum_k q_{ik} = 1</span>, and all <span class="math inline">q_{ik} \geq 0</span>.</p></li>
+<li><p><span class="math inline">P</span> (the ancestral allele frequency matrix): <span class="math inline">p_{kj}</span> is the frequency of the alternative allele at SNP <em>j</em> in ancestral population *k$.</p></li>
+</ul>
+<p>Under the model, each of the two allele copies carried by individual <em>i</em> at SNP <em>j</em> is drawn independently. For each copy, the model first picks an ancestral population <em>k</em> with probability <span class="math inline">q_{ik}</span>, and then draws the allele from that population’s allele frequency <span class="math inline">p_{kj}</span>. The probability that a single allele copy is the alternative allele is therefore:</p>
+<p><span class="math display">f_{ij} = \sum_{k=1}^{K} q_{ik} \, p_{kj}</span></p>
+<p>Since the genotype <span class="math inline">g_{ij}</span> is the sum of two independent Bernoulli draws, it follows a binomial distribution:</p>
+<p><span class="math display">P(g_{ij} \mid Q, P) = \binom{2}{g_{ij}} f_{ij}^{g_{ij}} (1 - f_{ij})^{2 - g_{ij}}</span></p>
+<p>Assuming independence across SNPs (conditional on <span class="math inline">Q</span> and <span class="math inline">P</span>), the full log-likelihood for all individuals and all SNPs is:</p>
+<p><span class="math display">\mathcal{L}(Q, P) = \sum_i \sum_j \left[ g_{ij} \log f_{ij} + (2 - g_{ij}) \log(1 - f_{ij}) \right]</span></p>
+<p>(ignoring the constant binomial coefficient term, which does not depend on the parameters). The task of inference is to find the values of <span class="math inline">Q</span> and <span class="math inline">P</span> that maximize this log-likelihood, subject to the constraints that <span class="math inline">q_{ik} \geq 0</span>, <span class="math inline">\sum_k q_{ik} = 1</span>, and <span class="math inline">0 \leq p_{kj} \leq 1</span>.</p>
+<p>Maximizing the log-likelihood over <span class="math inline">Q</span> and <span class="math inline">P</span> jointly is a non-convex optimization problem — there is no closed-form solution and many local optima. ADMIXTURE uses a <em>block relaxation</em> algorithm, which alternates between optimizing <span class="math inline">Q</span> with <span class="math inline">P</span> held fixed and optimizing <span class="math inline">P</span> with <span class="math inline">Q</span> held fixed. Each of these sub-problems is a constrained optimization that ADMIXTURE solves efficiently using sequential quadratic programming.</p>
+<p>The algorithm proceeds as follows:</p>
+<ol type="1">
+<li>Initialize <span class="math inline">Q</span> and <span class="math inline">P</span> with random values (respecting the constraints).</li>
+<li>Fix <span class="math inline">P</span> and update each row of <span class="math inline">Q</span> (i.e., the ancestry proportions for each individual) to maximize the log-likelihood.</li>
+<li>Fix <span class="math inline">Q</span> and update each column of <span class="math inline">P</span> (i.e., the allele frequencies for each SNP in each ancestral population) to maximize the log-likelihood.</li>
+<li>Repeat steps 2–3 until the log-likelihood increases by less than a convergence threshold (by default, <span class="math inline">\varepsilon = 10^{-4}</span>) between iterations.</li>
+</ol>
+<p>To speed up convergence, ADMIXTURE uses a quasi-Newton acceleration method that takes advantage of the curvature of the likelihood surface. This makes convergence substantially faster than the simple EM algorithm used by the related program FRAPPE.</p>
+<p>Because the optimization landscape has multiple local optima, different random initializations can lead to different solutions. In practice, it is wise to run ADMIXTURE multiple times with different random seeds (using the <code>-s</code> flag) and compare the results. Solutions with higher log-likelihood values are preferred, and consistent patterns across runs provide confidence that the results reflect genuine structure rather than artifacts of the optimization.</p>
+<p>Before we can run ADMIXTURE, we need to convert the pruned dataset to PLINK binary format (.bed, .bim, .fam):</p>
+<div id="c6ecf20e" class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>prefix <span class="op">=</span> <span class="st">"chr2_135_145_flt_pruned.gds"</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>contig_names <span class="op">=</span> ds_pruned.attrs.get(<span class="st">"contigs"</span>, [<span class="st">"2"</span>])</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>variant_contig_idx <span class="op">=</span> ds_pruned.variant_contig.values</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>variant_pos <span class="op">=</span> ds_pruned.variant_position.values</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Write .fam file (one line per individual)</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="ss">f"</span><span class="sc">{</span>prefix<span class="sc">}</span><span class="ss">.fam"</span>, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> samples:</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># FID IID father mother sex phenotype</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"</span><span class="sc">{</span>s<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>s<span class="sc">}</span><span class="ss"> 0 0 0 -9</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Write .bim file (one line per SNP)</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="ss">f"</span><span class="sc">{</span>prefix<span class="sc">}</span><span class="ss">.bim"</span>, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ds_pruned.variants.size):</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>        chrom <span class="op">=</span> contig_names[variant_contig_idx[i]] <span class="cf">if</span> contig_names <span class="cf">else</span> <span class="st">"2"</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"</span><span class="sc">{</span>chrom<span class="sc">}</span><span class="ss"> snp</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> 0 </span><span class="sc">{</span>variant_pos[i]<span class="sc">}</span><span class="ss"> A G</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Write .bed file (PLINK binary genotype format, SNP-major)</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>n_samples <span class="op">=</span> <span class="bu">len</span>(samples)</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>n_snps <span class="op">=</span> ds_pruned.variants.size</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>bytes_per_snp <span class="op">=</span> (n_samples <span class="op">+</span> <span class="dv">3</span>) <span class="op">//</span> <span class="dv">4</span>  <span class="co"># 4 genotypes per byte</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>genotypes <span class="op">=</span> ds_pruned[<span class="st">'call_genotype'</span>].values</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="ss">f"</span><span class="sc">{</span>prefix<span class="sc">}</span><span class="ss">.bed"</span>, <span class="st">"wb"</span>) <span class="im">as</span> f:</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Magic number and mode byte (SNP-major)</span></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="bu">bytes</span>([<span class="bn">0x6C</span>, <span class="bn">0x1B</span>, <span class="bn">0x01</span>]))</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> snp_i <span class="kw">in</span> <span class="bu">range</span>(n_snps):</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>        snp_bytes <span class="op">=</span> <span class="bu">bytearray</span>(bytes_per_snp)</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> sample_j <span class="kw">in</span> <span class="bu">range</span>(n_samples):</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>            g <span class="op">=</span> genotypes[snp_i, sample_j].<span class="bu">sum</span>()</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>            <span class="co"># PLINK encoding: 00=hom_ref(0), 01=missing, 10=het(1), 11=hom_alt(2)</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> g <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>                code <span class="op">=</span> <span class="bn">0b00</span></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> g <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>                code <span class="op">=</span> <span class="bn">0b10</span></span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> g <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>                code <span class="op">=</span> <span class="bn">0b11</span></span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a>                code <span class="op">=</span> <span class="bn">0b01</span>  <span class="co"># missing</span></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a>            byte_idx <span class="op">=</span> sample_j <span class="op">//</span> <span class="dv">4</span></span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a>            bit_offset <span class="op">=</span> (sample_j <span class="op">%</span> <span class="dv">4</span>) <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>            snp_bytes[byte_idx] <span class="op">|=</span> (code <span class="op">&lt;&lt;</span> bit_offset)</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>        f.write(snp_bytes)</span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Written PLINK files: </span><span class="sc">{</span>prefix<span class="sc">}</span><span class="ss">.bed, </span><span class="sc">{</span>prefix<span class="sc">}</span><span class="ss">.bim, </span><span class="sc">{</span>prefix<span class="sc">}</span><span class="ss">.fam"</span>)</span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>n_snps<span class="sc">}</span><span class="ss"> SNPs, </span><span class="sc">{</span>n_samples<span class="sc">}</span><span class="ss"> samples"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Running ADMIXTURE is straightforward. Given a PLINK binary file, you specify the number of ancestral populations <em>K</em> on the command line:</p>
+<div id="a4d3843d" class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ! srun --mem-per-cpu=5g --time=3:00:00 --account=populationgenomics \</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#     admixture chr2_135_145_flt_pruned.gds.bed 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="admixture-k3" class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>bash</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>admixture chr2_135_145_flt_pruned.gds.bed <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="have-a-look-at-the-fst-across-populations-that-is-printed.-would-you-guess-which-populations-are-pop0-pop1-and-pop2-referring-to" class="level4">
+<h4 class="anchored" data-anchor-id="have-a-look-at-the-fst-across-populations-that-is-printed.-would-you-guess-which-populations-are-pop0-pop1-and-pop2-referring-to">Have a look at the Fst across populations, that is printed. Would you guess which populations are Pop0, Pop1 and Pop2 referring to?</h4>
+<p>Admixture produced two output files: <code>chr2_135_145_flt_pruned.gds.3.Q</code> containing the ancestry proportions (one row per individual, one column per ancestral component), and <code>chr2_135_145_flt_pruned.gds.3.P</code> containing the estimated allele frequencies. The results are typically visualized as a stacked bar chart where each individual is a vertical bar divided into <em>K</em> colored segments, with the height of each segment representing the estimated ancestry proportion.</p>
+<p>An important question in ADMIXTURE analysis is how many ancestral populations should we assume. The model does not estimate <em>K</em> — you have to supply it. Choosing too few components will fail to capture real structure, while choosing too many will overfit: the model will start fitting noise and idiosyncrasies of the particular sample rather than genuine population-level patterns.</p>
+<p>ADMIXTURE addresses this through <em>cross-validation</em> (CV), a general statistical technique for assessing how well a model generalizes to data it has not seen. The logic is simple: a model that fits real structure will predict held-out data well, while an overfitted model will predict held-out data poorly despite fitting the training data well.</p>
+<p>ADMIXTURE’s cross-validation procedure works as follows:</p>
+<ol type="1">
+<li><p>Partition all observed genotypes (not individuals, but individual genotype entries <span class="math inline">g_{ij}</span>) into <em>v</em> roughly equally-sized <em>folds</em> (by default, <span class="math inline">v = 5</span>).</p></li>
+<li><p>For each fold in turn, mask (set to missing) all genotypes in that fold.</p></li>
+<li><p>Fit the model (estimate <span class="math inline">Q</span> and <span class="math inline">P</span>) using only the remaining unmasked genotypes.</p></li>
+<li><p>Use the estimated parameters to predict the masked genotypes. The predicted genotype for individual <em>i</em> at SNP <em>j</em> is the expected value under the fitted model:</p></li>
+</ol>
+<p><span class="math display">\hat{\mu}_{ij} = 2 \sum_k \tilde{q}_{ik} \, \tilde{p}_{kj}</span></p>
+<p>where <span class="math inline">\tilde{Q}</span> and <span class="math inline">\tilde{P}</span> are the parameter estimates from the training set (the data with that fold masked).</p>
+<ol start="5" type="1">
+<li>Compute the <em>prediction error</em> for each masked genotype by comparing the predicted value <span class="math inline">\hat{\mu}_{ij}</span> to the actual genotype <span class="math inline">g_{ij}</span>.</li>
+</ol>
+<p>The prediction error is measured using the <em>deviance residual</em> for the binomial model:</p>
+<p><span class="math display">d(g_{ij}, \hat{\mu}_{ij}) = g_{ij} \log\!\left(\frac{g_{ij}}{\hat{\mu}_{ij}}\right) + (2 - g_{ij}) \log\!\left(\frac{2 - g_{ij}}{2 - \hat{\mu}_{ij}}\right)</span></p>
+<p>This is a natural measure of discrepancy for count data bounded between 0 and 2. It is zero when the prediction exactly matches the observation and increases as the prediction deviates. The <em>cross-validation error</em> is the average of these deviance residuals across all masked genotypes over all folds.</p>
+<p>This entire procedure is repeated for each candidate value of <em>K</em>. The CV error for each <em>K</em> can then be compared: the value of <em>K</em> that minimizes the cross-validation error is the one whose fitted model best predicts genotypes that were not used in fitting. A model with too few components will underfit and predict poorly (high CV error), while a model with too many components will overfit and also predict poorly because parameter estimates become noisy when the model is more complex than the data can support.</p>
+<p>In practice, you run the cross-validation by adding the <code>--cv</code> flag:</p>
+<div id="admixture-cv" class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>bash</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> K <span class="kw">in</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span><span class="op">;</span> do</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    admixture <span class="op">--</span>cv chr2_135_145_flt_pruned.gds.bed $K <span class="op">|</span> tee log${K}.out</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>done</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Plotting these values as a function of <em>K</em> usually reveals a curve that decreases as <em>K</em> increases from 1 (capturing more real structure), reaches a minimum (the best predictive model), and then increases again (overfitting). However, the curve is often fairly flat around the minimum, meaning that several values of <em>K</em> have similar predictive performance. In such cases, there is no single “correct” <em>K</em>, and it is informative to examine and compare the ADMIXTURE results across multiple values of <em>K</em>.</p>
+<div id="cv-grep" class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>bash</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>grep <span class="op">-</span>h CV log<span class="op">*</span>.out</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>grep <span class="op">-</span>h CV log<span class="op">*</span>.out <span class="op">&gt;</span> CV_logs.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Look at the distribution of CV error:</p>
+<div id="plot-cv" class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ks, cv_errors <span class="op">=</span> [], []</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"CV_logs.txt"</span>) <span class="im">as</span> f:</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> f:</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>        m <span class="op">=</span> re.search(<span class="vs">r"K=</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="kw">)</span><span class="ch">\)</span><span class="vs">:</span><span class="dv">\s</span><span class="op">+</span><span class="kw">(</span><span class="pp">[</span><span class="dv">\d</span><span class="pp">.]</span><span class="op">+</span><span class="kw">)</span><span class="vs">"</span>, line)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> m:</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>            ks.append(<span class="bu">int</span>(m.group(<span class="dv">1</span>)))</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>            cv_errors.append(<span class="bu">float</span>(m.group(<span class="dv">2</span>)))</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>plt.plot(ks, cv_errors, <span class="st">"o-"</span>)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Number of clusters (K)"</span>)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Cross-validation error"</span>)</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="what-is-the-cross-validation-error-based-on-this-graph-what-is-the-best-k" class="level4">
+<h4 class="anchored" data-anchor-id="what-is-the-cross-validation-error-based-on-this-graph-what-is-the-best-k">What is the cross-validation error? Based on this graph, what is the best K?</h4>
+<div id="plot-admixture" class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the Q estimates for K=3</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>Q <span class="op">=</span> pandas.read_csv(<span class="st">"chr2_135_145_flt_pruned.gds.3.Q"</span>, sep<span class="op">=</span><span class="st">"</span><span class="er">\</span><span class="st">s+"</span>, header<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>Q.columns <span class="op">=</span> [<span class="ss">f"Pop</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(Q.shape[<span class="dv">1</span>])]</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort individuals by ancestry proportions</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>Q_sorted <span class="op">=</span> Q.sort_values(by<span class="op">=</span><span class="bu">list</span>(Q.columns)).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> vscode_theme(style<span class="op">=</span><span class="st">'ticks'</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">2</span>)):</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    bottom <span class="op">=</span> numpy.zeros(<span class="bu">len</span>(Q_sorted))</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># colors_admix = plt.cm.rainbow(np.linspace(0, 1, Q.shape[1]))</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>    colors_admix <span class="op">=</span> plt.cm.tab10.colors[:Q.shape[<span class="dv">1</span>]]</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, col <span class="kw">in</span> <span class="bu">enumerate</span>(Q_sorted.columns):</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>        plt.bar(<span class="bu">range</span>(<span class="bu">len</span>(Q_sorted)), Q_sorted[col], bottom<span class="op">=</span>bottom,</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span>colors_admix[i], width<span class="op">=</span><span class="fl">0.95</span>, edgecolor<span class="op">=</span><span class="st">"none"</span>, label<span class="op">=</span>col)</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>        bottom <span class="op">+=</span> Q_sorted[col].values</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Individual #"</span>)</span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">"Ancestry"</span>)</span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">"ADMIXTURE K=3"</span>)</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>    plt.legend(bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">"upper left"</span>)</span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="bu">len</span>(Q_sorted) <span class="op">-</span> <span class="fl">0.5</span>)</span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pops = info.population.values</span></span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a>    pops <span class="op">=</span> df_pca.population</span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>    plt.xticks(<span class="bu">list</span>(<span class="bu">range</span>(<span class="bu">len</span>(pops))), pops, rotation<span class="op">=</span><span class="dv">90</span>) </span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When interpreting ADMIXTURE results, keep in mind that the ancestral components do not necessarily correspond to real historical populations — they are statistical constructs that summarize the major axes of allele-frequency variation in the sample. The labeling of components is arbitrary: which color corresponds to “African ancestry” depends on how the components happen to align with the sampled populations. With our data set, we expect that at <em>K</em> = 3, the three components will roughly correspond to African, East Asian, and West Eurasian ancestry. At higher values of <em>K</em>, the model will begin to distinguish finer-scale structure, for example separating the Ju/’hoan (a Khoisan-speaking population) from the other African groups, or resolving structure within East Asia.</p>
+<p>It is also worth noting that the model is purely statistical and does not incorporate any geographic, linguistic, or historical information. Two populations that appear similar in an ADMIXTURE plot share similar allele frequencies, but this could reflect shared recent ancestry, ancient shared ancestry, gene flow, or simply convergent allele frequencies due to drift in small populations. Complementary analyses — such as PCA, <span class="math inline">F_{ST}</span> calculations, <span class="math inline">f</span>-statistics, and demographic modeling — are needed to distinguish among these scenarios.</p>
+<!-- ## Assignment
+
+In the following part of this exercise you will do both analyses (PCA and Admixture) using a different dataset. The data comes from the HAPMAP Consortium, to learn more about the populations studied in this project access [here](http://www.sanger.ac.uk/resources/downloads/human/hapmap3.html).
+
+The VCF file **hapmap.vcf**, an information file **relationships_w_pops_121708.txt**, as well as **.bim**, **.bed**, **.fam** files (only to be used if you get stuck during the exercise) are available for the admixture analysis, this dataset is placed in the cluster:
+
+```
+~/populationgenomics/data/assignment
+```
+
+Answer the same questions as answered in this tutorial and write a report (5 pages maximum) about the results and the analysis you have done. -->
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
